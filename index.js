@@ -1,7 +1,10 @@
 import { WebSocketServer } from 'ws';
 import { v4 as uuidv4 } from 'uuid';
 
-const wss = new WebSocketServer({ port: 8080 });
+// const wss = new WebSocketServer({ port: 8080 });
+const port = process.env.PORT || 8080;
+const wss = new WebSocketServer({ port });
+console.log(`WebSocket server listening on port ${port}`);
 
 const clients = {};
 const shipStates = {};
